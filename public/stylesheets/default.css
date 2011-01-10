@@ -1,0 +1,53 @@
+@import url(960.css);
+
+/* kleuren */
+
+/* 0A5573
+
+F2F2F2
+
+BFBFBF 
+
+8C8C8C
+
+262626 */
+ 
+
+body {
+	background: #F2F2F2;
+	color: #666;
+	font: 13px/18px Georgia, Palatino, Times, serif;
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: 0;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+	color: #0A5573;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+}
+
+a:hover {
+	
+}
+
+h1, h2 {
+  color: #8C8C8C;
+	margin: 0px;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 44px;
+}
+
+h3 {
+  color: #8C8C8C;
+	font-size: 18px;
+	line-height: 24px;
+	margin-top: 15px;
+}
+
+
