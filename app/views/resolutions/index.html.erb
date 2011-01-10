@@ -1,0 +1,25 @@
+<h1>Listing resolutions</h1>
+
+<table>
+  <tr>
+    <th>Resolution</th>
+    <th>Created at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resolutions.each do |resolution| %>
+  <tr>
+    <td><%= resolution.resolution %></td>
+    <td><%= resolution.created_at %></td>
+    <td><%= link_to 'Show', resolution %></td>
+    <td><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
+    <td><%= link_to 'Destroy', resolution, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resolution', new_resolution_path %>

@@ -1,4 +1,6 @@
 Resolutions::Application.routes.draw do
+  resources :resolutions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
