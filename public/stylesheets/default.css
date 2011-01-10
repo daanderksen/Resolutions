@@ -14,8 +14,8 @@ BFBFBF
  
 
 body {
-	background: #F2F2F2;
-	color: #666;
+	background: #BFBFBF;
+	color: #262626;
 	font: 13px/18px Georgia, Palatino, Times, serif;
 	margin: 0;
 	padding: 0;
@@ -32,7 +32,8 @@ a:link, a:visited, a:hover, a:active, a:focus {
 }
 
 a:hover {
-	
+	color: #fff;
+	background-color: #0A5573;
 }
 
 h1, h2 {
@@ -50,4 +51,25 @@ h3 {
 	margin-top: 15px;
 }
 
+.container_12 {
+  background-color: #F2F2F2;
+}
 
+.logo {
+  display: block;
+  margin: 20px;
+}
+
+.logo:hover {
+  background-color: none !important;
+}
+
+.headright {
+  float: right;
+  margin: 60px 50px 0px 50px;
+}
+
+ul.login li {
+  display: inline;
+  margin-right: 30px;
+}

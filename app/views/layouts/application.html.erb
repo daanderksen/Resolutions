@@ -7,8 +7,30 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div class="container_12">
 
-<%= yield %>
+  <div class="grid_6">
+  <a href="#"><%= image_tag("logo.png", :alt => "Logo", :class => "logo") %></a>
+  
+  </div>
+  
+  <div class="grid_4">
+    <div class="headright">
+        <ul class="login">
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+    </div>
+  
+  </div>
+  
+  <div class="grid_8">
+  
+  <%= yield %>
+
+  </div>
+  
+</div>
 
 </body>
 </html>
