@@ -16,10 +16,16 @@
   
   <div class="grid_4">
     <div class="headright">
-        <ul class="login">
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Sign Up</a></li>
-        </ul>
+    <% if user_signed_in? %>
+						Hello, <%= current_user.email %><br />
+						<%= link_to('Profile', edit_registration_path(current_user)) %> / <%= link_to('Logout', destroy_user_session_path) %>
+					<% else %>
+					   <ul class="login">
+               <li><%= link_to('Login', new_user_session_path) %> </li>
+               <li><%= link_to('Register', new_user_registration_path) %></li>
+             </ul>
+					<% end %>
+
     </div>
   
   </div>
