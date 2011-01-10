@@ -1,4 +1,7 @@
 class ResolutionsController < ApplicationController
+  before_filter :authenticate_user!
+
+
   # GET /resolutions
   # GET /resolutions.xml
   def index
