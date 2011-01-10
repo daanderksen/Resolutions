@@ -73,3 +73,8 @@ ul.login li {
   display: inline;
   margin-right: 30px;
 }
+
+#notice {
+  color: green;
+  padding: 5px 20px;
+}
