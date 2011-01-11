@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Resolution</th>
-    <th>Created at</th>
+    <th align="left">Resolution</th>
+    <th align="left" style="padding-left:10px;">Created</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,11 +11,11 @@
 
 <% @resolutions.each do |resolution| %>
   <tr>
-    <td><%= resolution.resolution %></td>
-    <td><%= resolution.created_at %></td>
-    <td><%= link_to 'Show', resolution %></td>
-    <td><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
-    <td><%= link_to 'Destroy', resolution, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td width="400px"><%= resolution.resolution %></td>
+    <td style="padding-left:10px;color:#a1a1a1;"><%= resolution.created_at %></td>
+    <td style="padding-left:10px;"><%= link_to 'Show', resolution %></td>
+    <td style="padding-left:10px;"><%= link_to 'Edit', edit_resolution_path(resolution) %></td>
+    <td style="padding-left:10px;"><%= link_to 'Destroy', resolution, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
