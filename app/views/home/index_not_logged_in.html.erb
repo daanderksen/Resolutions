@@ -7,7 +7,7 @@
 <div class="grid_10">
 <ul class="randomhome">
 <% @resolutions.each do |resolution| %>
-<li><a href="<%= resolution_path(resolution) %>"><%= resolution.resolution %></a></li>
+<li><%= link_to resolution.resolution, resolution %></li>
 <% end %>
 </ul>
 </div>
