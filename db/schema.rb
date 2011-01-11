@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20110111103141) do
     t.datetime "updated_at"
   end
 
+  create_table "resolutions_users", :id => false, :force => true do |t|
+    t.integer "resolution_id"
+    t.integer "users_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
