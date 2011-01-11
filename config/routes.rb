@@ -7,6 +7,8 @@ Resolutions::Application.routes.draw do
 
   resources :resolutions
 
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
