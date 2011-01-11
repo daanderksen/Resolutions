@@ -12,7 +12,7 @@ class ResolutionsController < ApplicationController
       format.xml  { render :xml => @resolutions }
     end
   end
-
+  
   # GET /resolutions/1
   # GET /resolutions/1.xml
   def show

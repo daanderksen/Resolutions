@@ -84,3 +84,13 @@ ul.login li {
 .content {
   padding: 20px 20px 50px 20px;
 }
+
+ul.randomhome {
+  margin: 0;
+  padding: 20px 0px 0px 20px;
+}
+
+ul.randomhome li {
+  margin: 0;
+  width: 500px;
+}
