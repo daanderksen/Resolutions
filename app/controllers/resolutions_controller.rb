@@ -12,7 +12,7 @@ class ResolutionsController < ApplicationController
       format.xml  { render :xml => @resolutions }
     end
   end
-  
+
   # GET /resolutions/1
   # GET /resolutions/1.xml
   def show
@@ -47,6 +47,10 @@ class ResolutionsController < ApplicationController
 
     respond_to do |format|
       if @resolution.save
+        # after create callback would be MUCH nicer, but that doesn't work
+        # because current_user isn't available in your model.
+        Intend.create(:user_id => current_user.id, :resolution_id => @resolution.id)
+
         format.html { redirect_to(@resolution, :notice => 'Resolution was successfully created.') }
         format.xml  { render :xml => @resolution, :status => :created, :location => @resolution }
       else
