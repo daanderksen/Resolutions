@@ -1,15 +1,18 @@
-<h1>What are your resolutions?</h1>
-
-<div class="grid_7">
-<h3>With <strong>yourresolutions</strong> you can easily create your commitments for the upcoming year! You can share your resolutions with friends and see what their personal goals, projects or habit changes are.</h3>
-<h3>Go <%= link_to('ahead', new_user_registration_path) %> and let your resolutions come true in 2011!</h3>
-
-<div class="grid_10">
-<ul class="randomhome">
-<% @resolutions.each do |resolution| %>
-<li><a href="<%= resolution_path(resolution) %>"><%= resolution.resolution %></a></li>
-<% end %>
+<h1>My resolutions</h1>
+<ul>
+	<% @my_resolutions.each do |resolution| %>
+		<li><%= link_to resolution.resolution, resolution %></li>
+	<% end %>
 </ul>
-</div>
 
-</div>
+<h1>All resolutions</h1>
+<ul>
+	<% @resolutions.each do |resolution| %>
+		<li>
+			<%= link_to resolution.resolution, resolution %>
+			<% if resolution.users.include?(current_user) %> - Already on your list<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<p>Found nothing interesting? <%= link_to 'Create a new resolution', new_resolution_path %></p>
