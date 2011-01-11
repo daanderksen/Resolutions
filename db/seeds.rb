@@ -6,6 +6,51 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+User.create([
+  {
+    :real_name => 'Bjorn',
+    :email => 'bjorn.post@gmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Daan',
+    :email => 'derksendaan@gmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Roy',
+    :email => 'royswinkels@hotmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Niels',
+    :email => 'niels_vanasselt@hotmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Elbert',
+    :email => 'elbertvink@gmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Arthur',
+    :email => 'arthur.bennis@han.nl',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+  {
+    :real_name => 'Robert',
+    :email => 'robert.holwerda@han.nl',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  },
+])
+
 Resolution.create(:resolution => 'Smoke less')
 Resolution.create(:resolution => 'Drink less alcohol')
 Resolution.create(:resolution => 'Compromise less on core beliefs')
