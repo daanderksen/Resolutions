@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   def index
-
-	@users = User.find(:all)
-
+    @users = User.find(:all)
   end
+<<<<<<< HEAD
 
   def show
 
@@ -11,4 +10,6 @@ class UsersController < ApplicationController
 
   end
 
+=======
+>>>>>>> origin/HEAD
 end

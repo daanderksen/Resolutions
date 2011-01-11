@@ -1,15 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @resolution.resolution %></h2>
 
-<p>
-  <b>Resolution:</b>
-  <%= @resolution.resolution %>
-</p>
-
-<p>
-  <b>Created at:</b>
-  <%= @resolution.created_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_resolution_path(@resolution) %> |
-<%= link_to 'Back', resolutions_path %>
+<h3>People intending to do this</h3>
+<ul>
+	<% @resolution.users.each do |user| %>
+		<li><%= link_to user.email, user_path(user) %></li>
+	<% end %>
+</ul>
+<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
