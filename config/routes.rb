@@ -1,10 +1,5 @@
 Resolutions::Application.routes.draw do
-  get "user/index"
-
-  get "home/index"
-
   devise_for :users
-
   resources :resolutions
   resources :intends
   resources :users
