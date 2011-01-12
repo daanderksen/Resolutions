@@ -1,3 +1,7 @@
-<%= @users.real_name %>
-<h1>Resolutions:</h1>
-<%= @users.resolutions %>
+<h1><%= @user.real_name %>'s resolutions</h1>
+<ul>
+<% @user.resolutions.each do |resolution| %>
+<li><a href="<%= resolution_path(resolution) %>"><%= resolution.resolution %></a></li>
+<% end %>
+</ul>
+
