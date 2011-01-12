@@ -3,7 +3,7 @@
 <div class="grid_7">
 <h3>Here you can see all the <strong>users</strong> that have shared there resolutions</h3>
 <ul>
-<% @users.each do |user| %>
+<% @users.resolutions.each do |user| %>
 <li><a href="<%= user_path(user) %>"><%= user.real_name %></a></li>
 <% end %>
 </ul>

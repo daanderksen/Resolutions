@@ -15,7 +15,7 @@
 		<% @resolutions.each do |resolution| %>
 			<li>
 				<%= link_to resolution.resolution, resolution %>
-				<% if resolution.users.include?(current_user) %> - Already on your list<% end %>
+				<% if resolution.users.include?(current_user) %> <strong>- Already on your list</strong><% end %>
 			</li>
 		<% end %>
 	</ul>

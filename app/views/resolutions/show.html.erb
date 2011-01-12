@@ -14,7 +14,9 @@
 		<%= link_to "Nah, changed my mind", intend_path(:id => @resolution.id), :confirm => "Are you sure?", :method => :delete %>
 	<% end %>
 <% else %>
-	<h3>Even the person who invented this resolution doesn't have the intention to do it anymore. Do you?</h3>
+  <div class="grid_9">
+	<h3>Even the person who invented this resolution doesn't have the intention to do it anymore. Do you?</h3><br/>
+	 
 	<%= button_to "Sure thing bro!", intends_path(:resolution_id => @resolution.id) %>
 <% end %>
-
+</div>
