@@ -1,0 +1,41 @@
+- Many to many
+rails generate model intend resolution_id:integer user_id:integer
+
+# models/intend.rb
+belongs_to :resolution
+belongs_to :user
+
+# models/user.rb
+has_many :intends
+has_many :resolutions, :through => :intends
+
+# models/resolution.rb
+has_many :intends
+has_many :users, :through => :intends
+
+- via console een intend aanmaken
+user = User.find(1)
+resolution = Resolution.find(1)
+intend = Intend.create(:user_id => user.id, :resolution_id => resolution.id)
+user.resolution/s
+
+
+Bjorn gaat verder om de wijzigingen naar voorkant te kopiëren.
+- in Resolutions#create, ervoor zorgen dat huidige gebruiker gekoppeld wordt na maken:
+Intend.create(:user_id => current_user.id, :resolution_id => @resolution.id)
+
+- rails generate controller intends: https://gist.github.com/776044
+- in routes.rb
+recources intends
+
+- en in layout/show
+
+<h2><%= @resolution.resolution %></h2>
+
+<h3>People intending to do this</h3>
+<ul>
+	<% @resolution.users.each do |user| %>
+		<li><%= link_to user.email, user_path(user) %></li>
+	<% end %>
+</ul>
+<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
