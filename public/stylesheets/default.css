@@ -110,6 +110,6 @@ label[for=resolution_resolution] {
 #new_resolution input[type=submit] {
 	margin: 0 auto;
 	display: block;
-	width: 120px;
+	width: 150px;
 	text-align: center;
 }

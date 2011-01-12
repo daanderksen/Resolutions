@@ -1,9 +1,20 @@
 <h2><%= @resolution.resolution %></h2>
 
-<h3>People intending to do this</h3>
-<ul>
-	<% @resolution.users.each do |user| %>
-		<li><%= link_to user.email, user_path(user) %></li>
+<% if @resolution.users.size > 0 %>
+	<h3>People intending to do this</h3>
+	<ul>
+		<% @resolution.users.each do |user| %>
+			<li><%= link_to user.email, user_path(user) %></li>
+		<% end %>
+	</ul>
+
+	<% if not current_user.resolutions.exists?(@resolution) %>
+		<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
+	<% else %>
+		<%= link_to "Nah, changed my mind", intend_path(:id => @resolution.id), :confirm => "Are you sure?", :method => :delete %>
 	<% end %>
-</ul>
-<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
+<% else %>
+	<h3>Even the person who invented this resolution doesn't have the intention to do it anymore. Do you?</h3>
+	<%= button_to "Sure thing bro!", intends_path(:resolution_id => @resolution.id) %>
+<% end %>
+
