@@ -19,17 +19,6 @@ Het gaat hierbij niet zozeer om de code, maar om het resultaat ervan!
 ################################################
 10.00 (Daan) - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen
 
-- Resolution dmv van scaffolding:
-
-rails generate scaffold Resolution resolution:string
-
-rake db:migrate
-
-- validatie:
-
-validates :resolution, :presence => true,
-                       :length => { :minimum => 10 }
-
 ################################################
 10.15 (Elbert) - Bouwen app - Devise authentication (gem)
 
@@ -41,65 +30,6 @@ klaar!
 
 ################################################
 10.30 (Daan) - Bouwen app - Models - Many to Many
-
-- Many to many
-rails generate model intend resolution_id:integer user_id:integer
-
-# models/intend.rb
-belongs_to :resolution
-belongs_to :user
-
-# models/user.rb
-has_many :intends
-has_many :resolutions, :through => :intends
-
-# models/resolution.rb
-has_many :intends
-has_many :users, :through => :intends
-
-- via console een intend aanmaken
-user = User.find(1)
-resolution = Resolution.find(1)
-intend = Intend.create(:user_id => user.id, :resolution_id => resolution.id)
-user.resolution/s
-
-
-Bjorn gaat verder om de wijzigingen naar voorkant te kopiëren.
-- in resolutionscontroller:
-In de createfunctie:
-Intend.create(:user_id => current_user.id, :resolution_id => @resolution.id)
-
-- rails generate controller intends
-
-controler:
-  def create
-    @intend = Intend.new(:user_id => current_user.id, :resolution_id => params[:resolution_id])
-
-    respond_to do |format|
-      if not current_user.resolutions.include?(Resolution.find(params[:resolution_id])) and @intend.save
-        format.html { redirect_to(resolution_path(params[:resolution_id]), :notice => 'You now intend to do this.') }
-        format.xml  { render :xml => @intend, :status => :created, :location => @intend }
-      else
-        format.html { redirect_to(resolution_path(params[:resolution_id]), :notice => 'You already intend to do this.') }
-        format.xml  { render :xml => @intend.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-- in routes.rb
-recources intends
-
-- en in layout/show
-
-<h2><%= @resolution.resolution %></h2>
-
-<h3>People intending to do this</h3>
-<ul>
-	<% @resolution.users.each do |user| %>
-		<li><%= link_to user.email, user_path(user) %></li>
-	<% end %>
-</ul>
-<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
 
 ################################################
 10.45 (naam) - Bouwen app - *uitloop*

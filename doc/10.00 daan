@@ -1,0 +1,12 @@
+10.00 (Daan) - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen
+
+- Resolution dmv van scaffolding:
+
+rails generate scaffold Resolution resolution:string
+
+rake db:migrate
+
+- validatie:
+
+validates :resolution, :presence => true,
+                       :length => { :minimum => 10 }
