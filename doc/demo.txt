@@ -1,0 +1,31 @@
+demo Jacob's Creek
+
+Home pagina
+
+- random uitleggen (refresh)
+- doorgaan naar all products
+- filters doorlopen
+- product bekijken
+- product in winkelmandje
+- sign up / profiel doornemen
+- zoeken
+- rating/review toevoegen
+- product in winkelmandje
+- hoeveelheid wijzigen (shipping costs wijzigen!)
+- regions
+- producten per regio laten zien
+- shopping cart
+- discount code invullen « NYE2010
+- bestelproces doorlopen
+- admin openen
+- orders laten zien
+- laatst aangemaakte order (status wijzigen!)
+- discounts laten zien (eentje aanmaken!)
+- related products (eentje aanmaken!)
+- grafieken doornemen
+- laten zien dat grafieken veranderen (nieuwe order aanmaken!)
+
+
+
+
+
