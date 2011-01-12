@@ -1,0 +1,119 @@
+
+// in app/views/home/index.html.erb:
+// doe voor iedere resolution van de variabele @resolutions het volgende
+// - maak een list-item
+// - laat de inhoud van de resolution zien (resolution.resolution)
+// - maak het pad naar de resolution 'resolution'
+// sluit de loop <% end %>
+
+
+<div class="grid_10">
+
+<ul class="randomhome">
+
+	<% @resolutions.each do |resolution| %>
+		<li><%= link_to resolution.resolution, resolution %></li>
+	<% end %>
+</ul>
+
+</div>
+
+
+
+#######################################################################
+
+
+
+// in app/controllers/home_controller:
+
+// variabele @resolutions
+// vind alle resolutions
+// begin vanaf een willekeurig punt (:offset)
+// en pak vanaf daar de drie volgende resolutions (:limit => 3)
+// drie resolutions achter elkaar is minder belastend voor de db dan 
+// wanneer je :random gebruikt
+
+
+def index
+	@resolutions = Resolution.find(:all, :offset => (Resolution.count * rand).to_i, :limit => 3 )
+end
+
+
+
+######################################################################
+
+
+// in index_not_logged_in.html.erb
+// de gebruiker kan inloggen
+// mocht hij niet ingelogd zijn, dan ziet hij deze pagina:
+// de pagina index_not_logged_in wordt dan gerenderd en weergegeven
+
+
+class HomeController < ApplicationController
+  def index
+	if not current_user
+	  @resolutions = Resolution.find(:all, :offset => (Resolution.count * rand).to_i, :limit => 3 )
+	  render 'index_not_logged_in'
+		
+
+// als de gebruiker toch ingelogd is, ziet hij het volgende
+// variabele my_resolutions
+// alle resolutions van de current user (current_user.resolutions)
+// laat daaronder alle resolutions zien
+// de pagina index wordt dan gerenderd en weergegeven
+
+	else
+	  @my_resolutions = current_user.resolutions
+	  @resolutions = Resolution.all
+	  render 'index'
+	end
+  end
+end
+
+
+
+########################################################################
+
+
+
+// nu is het tijd om je view op orde te brengen, mocht je ingelogd zijn
+// in app/views/home/index.html.erb
+// eerst komen je eigen resolutions aan de beurt 
+
+<h1>My resolutions</h1>
+<ul>
+  <% @my_resolutions.each do |resolution| %>
+  <li><%= link_to resolution.resolution, resolution %></li>
+  <% end %>
+</ul>
+
+
+// daarna de lijst met resolutions waaruit je kunt kiezen (db:seed)
+// dit doet het volgende:
+// laat alle resolutions zien
+// en bij de resolutions die de ingelogde user al aangevinkt heeft
+// '- Already on your list' komt te staan
+
+
+<h1>All resolutions</h1>
+<ul>
+  <% @resolutions.each do |resolution| %>
+    <li>
+      <%= link_to resolution.resolution, resolution %>
+      <if resolution.users.include?(current_user) %>
+      - Already on your list
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+
+// mocht er niks tussen staan wat je leuk vindt, maak dan een nieuwe 
+// resolution (of in ieder geval het pad er naar toe op deze manier:
+// dit pad linkt naar een invoerveld voor een nieuwe resolution
+
+
+<p>Found nothing interesting? <%= link_to 'Create a new resolution', new_resolution_path %></p>
+
+
+
