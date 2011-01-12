@@ -1,50 +1,47 @@
 Draaiboek RoR Workshop (OUDE VERSIE STAAT ONDERAAN HET DOCUMENT):
 =======================
 
-09.00 (naam) - Begin les
+09.00 Allen - Begin les
 
 ################################################
-09.15 (naam) - Begin v/d workshop
+09.15 Allen - Begin v/d workshop
 
 VirtualBox inclusief rails moet aan het einde bij iedereen geinstalleerd staan.
 
 ################################################
-09.30 (naam) - Demo van onze applicatie incl. vragen
+09.30 Roy - Demo van onze applicatie incl. vragen
 
 Het gaat hierbij niet zozeer om de code, maar om het resultaat ervan!
 
 ################################################
-09.45 (naam) - Wat is Ruby, wat is Rails incl. toepassingen en uitleg MVC (wat hoort waar?, features?)
+09.45 Bjorn - Wat is Ruby, wat is Rails incl. toepassingen en uitleg MVC (wat hoort waar?, features?) - project aanmaken.
 
 ################################################
-10.00 (Daan) - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen
+10.00 Daan - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen + 5 min. Niels met db:seed.
 
 ################################################
-10.15 (Elbert) - Bouwen app - Devise authentication (gem)
+10.15 Roy - Bouwen app - Templates - Basics (o.a. locatie van bestanden, doorgeven vanuit controller, link_to/form_for helpers)
+
+################################################
+10.30 Roy/Niels - Bouwen app - Templates - Toepassen Roy (random dingen op FP), toepassen Niels (views users).
+
+################################################
+10.45 Elbert - Bouwen app - Devise authentication (gem)
 
 - Devise installeren:
 https://github.com/plataformatec/devise
 
 en dan rails generate devise USER
-klaar!
+klaar (niet, er zijn nog meer dingen die je moet doen)!
 
 ################################################
-10.30 (Daan) - Bouwen app - Models - Many to Many
+11.00 Daan (Bjorn) - Bouwen app - Models - Many to Many (wss met wat uitloop)
 
 ################################################
-10.45 (naam) - Bouwen app - *uitloop*
+11.15 Bjorn - Bouwen app - IntendsController+views + *uitloop*
 
 ################################################
-11.00 (naam) - Bouwen app - Templates - Basics (uitleg van 'View' laag in Rails)
-
-################################################
-11.15 (naam) - Bouwen app - Templates - Helpers link_to, form_for etc.
-
-################################################
-11.30 (naam) - x
-
-################################################
-11.45 (naam) - Bouwen app - Plus/min: wanneer wel/niet Ruby/Rails? (docs, community, toekomst, toepassingen)
+11.30 Elbert - Resumé - Plus/min: wanneer wel/niet Ruby/Rails? (docs, community, toekomst, toepassingen)
 
 Voordelen:
 - Stackoverflow biedt veel antwoorden!
@@ -67,23 +64,4 @@ Toepassingen:
 - www.ratemyarea.com
 
 ################################################
-12.00 (naam) - Afsluiting
-
-################################################
-OUDE VERSIE:
-Draaiboek RoR Workshop:
-=======================
-
-09.00 - Begin les
-09.15 - Begin v/d workshop
-09.30 - Demo van onze applicatie incl. vragen
-09.45 - Wat is Ruby, wat is Rails incl. toepassingen en uitleg MVC (wat hoort waar?, features?)
-10.00 - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen (Daan)
-10.15 - Bouwen app - Models - ActiveRecord (queries, associations, mogelijkheden ActiveRecord)
-10.30 - Bouwen app - Models - ActiveRecord
-10.45 - Bouwen app - *uitloop*
-11.00 - Bouwen app - Templates - Basics (uitleg van 'View' laag in Rails)(Roy)
-11.15 - Bouwen app - Templates - Helpers link_to, form_for etc.
-11.30 - Bouwen app - Devise authentication (gem) (Daan)
-11.45 - Bouwen app - Plus/min: wanneer wel/niet Ruby/Rails? (docs, community, toekomst, toepassingen)
-12.00 - Afsluiting
+11.45 Afsluiting
