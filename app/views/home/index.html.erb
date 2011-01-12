@@ -1,18 +1,24 @@
-<h1>My resolutions</h1>
-<ul>
-	<% @my_resolutions.each do |resolution| %>
-		<li><%= link_to resolution.resolution, resolution %></li>
+<div class="grid_9">
+	<h1>My resolutions</h1>
+	<% if @my_resolutions.size > 0 %>
+		<ul>
+			<% @my_resolutions.each do |resolution| %>
+				<li><%= link_to resolution.resolution, resolution %></li>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>You don't have any resolutions just yet. Start browsing around all resolutions, and pick some you like.</p>
 	<% end %>
-</ul>
 
-<h1>All resolutions</h1>
-<ul>
-	<% @resolutions.each do |resolution| %>
-		<li>
-			<%= link_to resolution.resolution, resolution %>
-			<% if resolution.users.include?(current_user) %> - Already on your list<% end %>
-		</li>
-	<% end %>
-</ul>
+	<h1>All resolutions</h1>
+	<ul>
+		<% @resolutions.each do |resolution| %>
+			<li>
+				<%= link_to resolution.resolution, resolution %>
+				<% if resolution.users.include?(current_user) %> - Already on your list<% end %>
+			</li>
+		<% end %>
+	</ul>
 
-<p>Found nothing interesting? <%= link_to 'Create a new resolution', new_resolution_path %></p>
+	<p>Found nothing interesting? <%= link_to 'Create a new resolution', new_resolution_path %></p>
+</div>

@@ -6,12 +6,12 @@
 
 F2F2F2
 
-BFBFBF 
+BFBFBF
 
 8C8C8C
 
 262626 */
- 
+
 
 body {
 	background: #BFBFBF;
@@ -93,4 +93,23 @@ ul.randomhome {
 ul.randomhome li {
   margin: 0;
   width: 500px;
+}
+
+
+/* resolutions add form */
+label[for=resolution_resolution] {
+	display: none;
+}
+
+#resolution_resolution {
+	font-size: 24px;
+	width: 720px;
+	padding: 10px;
+}
+
+#new_resolution input[type=submit] {
+	margin: 0 auto;
+	display: block;
+	width: 120px;
+	text-align: center;
 }
