@@ -1,0 +1,25 @@
+10.10 (Niels) - Korte uitleg seeds.rb
+
+- werking van seed uitleggen.
+- hoe je de seed op moet stellen.
+
+##################################################################################
+
+# Examples:
+#
+#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
+#   Mayor.create(:name => 'Daley', :city => cities.first)
+
+###################################################################################
+
+# Voorbeeld bij ons:
+
+User.create([
+  {
+    :real_name => 'Bjorn',
+    :email => 'bjorn.post@gmail.com',
+    :password => 'blabla',
+    :password_confirmation => 'blabla',
+  }])
+
+Resolution.create(:resolution => 'Smoke less')
