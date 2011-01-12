@@ -1,0 +1,14 @@
+################################################
+10.45 Elbert - Bouwen app - Devise authentication (gem)
+
+Gemfile aanpassen
+bundle install
+devise install
+
+resultaat laten zien.
+
+- Devise installeren:
+https://github.com/plataformatec/devise
+
+en dan rails generate devise USER
+klaar
