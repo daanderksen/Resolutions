@@ -28,7 +28,7 @@ def index
 <h3>Here you can see all the <strong>users</strong> that have shared there resolutions</h3>
 <ul>
 <% @users.resolutions.each do |user| %>
-<li><a href="<%= user_path(user) %>"><%= user.real_name %></a></li>
+<li><a href="<%= user_path(user) %>"><%= user.email %></a></li>
 <% end %>
 </ul>
 
@@ -39,7 +39,7 @@ def index
 // met de volgende code gebruik je de zo juist aangemaakt variabele van de show '@user' 
 
 
-<h1><%= @user.real_name %>'s resolutions</h1>
+<h1><%= @user.email %>'s resolutions</h1>
 <ul>
 <% @user.resolutions.each do |resolution| %>
 <li><a href="<%= resolution_path(resolution) %>"><%= resolution.resolution %></a></li>

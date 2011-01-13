@@ -16,7 +16,6 @@
 
 User.create([
   {
-    :real_name => 'Bjorn',
     :email => 'bjorn.post@gmail.com',
     :password => 'blabla',
     :password_confirmation => 'blabla',
