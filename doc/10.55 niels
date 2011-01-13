@@ -46,4 +46,7 @@ def index
 <% end %>
 </ul>
 
+in config/routes.rb
+resources :users
+
 
