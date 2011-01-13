@@ -23,7 +23,7 @@ Het gaat hierbij niet zozeer om de code, maar om het resultaat ervan!
 10.15 Roy - Bouwen app - Templates - Basics (o.a. locatie van bestanden, doorgeven vanuit controller, link_to/form_for helpers)
 
 ################################################
-10.30 Roy/Niels - Bouwen app - Templates - Toepassen Roy (random dingen op FP), toepassen Niels (views users).
+10.30 Roy - Bouwen app - Templates - Toepassen Roy (random dingen op FP)
 
 ################################################
 10.45 Elbert - Bouwen app - Devise authentication (gem)
@@ -35,6 +35,10 @@ en dan rails generate devise USER
 klaar (niet, er zijn nog meer dingen die je moet doen)!
 
 ################################################
+10:55 Niels - User controller aanmaken en userview
+
+################################################
+
 11.00 Daan (Bjorn) - Bouwen app - Models - Many to Many (wss met wat uitloop)
 
 ################################################

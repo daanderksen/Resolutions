@@ -1,0 +1,49 @@
+
+// in de console:
+rails generate controller users
+
+######################################################################
+
+// in app/controllers/users_controller:
+// variabele @users aanmaken
+// vind alle users
+
+def index
+    @users = User.find(:all)
+  end
+
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+######################################################################
+
+
+// nu is het tijd om je view op orde te brengen, mocht je ingelogd zijn
+// in app/views/users/index.html.erb
+// met de volgende code gebruik je de zo juist aangemaakt variabele van de index '@users'
+
+<h1>All users</h1>
+<h3>Here you can see all the <strong>users</strong> that have shared there resolutions</h3>
+<ul>
+<% @users.resolutions.each do |user| %>
+<li><a href="<%= user_path(user) %>"><%= user.email %></a></li>
+<% end %>
+</ul>
+
+######################################################################
+
+// Nu gaan we er voor zorgen dat wanneer er op de gebruiker wordt geklikt je naar de gebruikers profiel pagina gaat waar zijn resolutions worden weergegeven.
+// in app/views/users/show.html.erb
+// met de volgende code gebruik je de zo juist aangemaakt variabele van de show '@user' 
+
+
+<h1><%= @user.email %>'s resolutions</h1>
+<ul>
+<% @user.resolutions.each do |resolution| %>
+<li><a href="<%= resolution_path(resolution) %>"><%= resolution.resolution %></a></li>
+<% end %>
+</ul>
+
+
