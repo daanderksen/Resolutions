@@ -1,0 +1,44 @@
+Op bord: 
+
+####################################
+Hoe werkt het?
+
+Explorer
+|   |
+Routing
+|   |
+| Views
+|   |
+Controllers
+|   |
+Models
+####################################
+De bestanden waar we mee werken:
+
+Routing:
+routes.rb
+
+Views:
+- home
+ - index.html.erb
+ - index_not_logged_in.html.erb
+- layouts
+ - application.html.erb
+- resolutions
+ - index.html.erb
+ - new.html.erb
+ - show.html.erb
+ - edit.html.erb
+ - _form.html.erb
+- users
+ - index.html.erb
+ - show.html.erb
+
+Controllers: 
+Application.rb   home_controller.rb  user_controller.rb  intends_controller.rb   resolution_controller.rb
+
+
+Models: 
+User.rb   Intend.rb   Resolution.rb
+
+
