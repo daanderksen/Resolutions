@@ -1,10 +1,21 @@
 10.00 (Daan) - Bouwen app - Models/Controllers scaffolden (incl. uitleg models in Rails) + validatie toevoegen
 
 - Resolution dmv van scaffolding:
+models, views, and controllers worden aangemaakt voor een recourse.. in ons geval resolution.
+Scaffolding is handig voor het snel opzetten van resources, maar het is niet mogelijk om iets op maat te generen. Je zult na het scaffolden dus waarschijnlijk alsnog veel moeten aanpassen.
+Ervaren programmeurs gebruiken daarom ook geen scaffold meer.
 
 rails generate scaffold Resolution resolution:string
 
+De scaffoldgenerator maakt 15 bestanden aan waaronder
+- het model
+- een controller
+- de bijbehorende views (index, edit, show, new en _form)
+- een migratie (ruby class die tabelaanpassingen door kan voeren)
+
 rake db:migrate
+
+Mogelijkheden: /resolutions/ /edit/show/new
 
 - validatie:
 

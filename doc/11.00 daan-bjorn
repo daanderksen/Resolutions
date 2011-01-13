@@ -1,32 +1,42 @@
-- Many to many
-rails generate model intend resolution_id:integer user_id:integer
+Relatie tussen Resolution en User leggen. 
+one-to-one
+  belongs_to :user
+  has_one :resolution
+one-to-many
+  belongs_to :user
+  has_many :resolutions
+many-to-many
 
-# models/intend.rb
+
+- Many to many
+rails generate model intention resolution_id:integer user_id:integer
+
+# models/intention.rb
 belongs_to :resolution
 belongs_to :user
 
 # models/user.rb
-has_many :intends
-has_many :resolutions, :through => :intends
+has_many :intentions
+has_many :resolutions, :through => :intentions
 
 # models/resolution.rb
-has_many :intends
-has_many :users, :through => :intends
+has_many :intentions
+has_many :users, :through => :intentions
 
-- via console een intend aanmaken
+- via console een intention aanmaken
 user = User.find(1)
 resolution = Resolution.find(1)
-intend = Intend.create(:user_id => user.id, :resolution_id => resolution.id)
-user.resolution/s
+intention = Intention.create(:user_id => user.id, :resolution_id => resolution.id)
+user.resolutions
 
 
 Bjorn gaat verder om de wijzigingen naar voorkant te kopiëren.
 - in Resolutions#create, ervoor zorgen dat huidige gebruiker gekoppeld wordt na maken:
-Intend.create(:user_id => current_user.id, :resolution_id => @resolution.id)
+Intention.create(:user_id => current_user.id, :resolution_id => @resolution.id)
 
-- rails generate controller intends: https://gist.github.com/776044
+- rails generate controller intentions: https://gist.github.com/776044
 - in routes.rb
-recources intends
+recources intentions
 
 - en in layout/show
 
@@ -38,4 +48,4 @@ recources intends
 		<li><%= link_to user.email, user_path(user) %></li>
 	<% end %>
 </ul>
-<%= button_to "Me too!", intends_path(:resolution_id => @resolution.id) %>
+<%= button_to "Me too!", intentions_path(:resolution_id => @resolution.id) %>
