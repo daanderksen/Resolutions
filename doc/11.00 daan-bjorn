@@ -23,6 +23,8 @@ has_many :resolutions, :through => :intentions
 has_many :intentions
 has_many :users, :through => :intentions
 
+rake db:migrate
+
 - via console een intention aanmaken
 user = User.find(1)
 resolution = Resolution.find(1)
